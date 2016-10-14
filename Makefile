@@ -1,7 +1,7 @@
 CFLAGS=-Wall -O3 -g
 CXXFLAGS=$(CFLAGS)
-OBJECTS=demo-main.o minimal-example.o c-example.o text-example.o
-BINARIES=demo minimal-example c-example text-example
+OBJECTS=clock.o
+BINARIES=clock
 
 # Where our library resides. You mostly only need to change the
 # RGB_LIB_DISTRIBUTION, this is where the library is checked out.
