@@ -61,7 +61,7 @@ void Application::Run()
     // for that.
     // Animation finished. Shut down the RGB matrix.
     while (!interrupt_received) {
-        DrawFrame(mCanvas);
+        DrawFrame();
     }
     mCanvas->Clear();
     delete mCanvas;
