@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{13ee8525-1bd7-40b8-8765-794b9dc6dcbc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\bdf-font.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\framebuffer.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\gpio.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\graphics.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\hardware-mapping.c">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\led-matrix.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\led-matrix-c.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\options-initialize.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\thread.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\transformer.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\canvas.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\gpio.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\graphics.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\led-matrix-c.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\led-matrix.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\thread.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\threaded-canvas-manipulator.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\transformer.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\framebuffer-internal.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hardware-mapping.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\utf8-internal.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,6 +1,6 @@
 CFLAGS=-Wall -O3 -g
 CXXFLAGS=$(CFLAGS)
-OBJECTS=clock.o
+OBJECTS=main.o application.o
 BINARIES=clock
 
 # Where our library resides. You mostly only need to change the
@@ -17,13 +17,8 @@ all : $(BINARIES)
 $(RGB_LIBRARY): FORCE
 	$(MAKE) -C $(RGB_LIBDIR)
 
-clock : clock.o $(RGB_LIBRARY)
+clock : main.o $(RGB_LIBRARY)
 	$(CXX) $< -o $@ $(LDFLAGS)
-
-# Since the C example uses the C++ library underneath, which depends on C++
-# runtime stuff, you still have to also link -lstdc++
-c-example : c-example.o $(RGB_LIBRARY)
-	$(CC) $< -o $@ $(LDFLAGS) -lstdc++
 
 %.o : %.cc
 	$(CXX) -I$(RGB_INCDIR) $(CXXFLAGS) -c -o $@ $<
