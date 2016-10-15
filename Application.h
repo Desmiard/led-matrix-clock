@@ -6,7 +6,7 @@ namespace rgb_matrix
 class Application
 {
 private 
-    Canvas * mCanvas;
+    rgb_matrix::Canvas * mCanvas;
 public:
     Application();
     ~Application();
