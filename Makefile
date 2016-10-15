@@ -1,6 +1,6 @@
 CFLAGS=-Wall -O3 -g
 CXXFLAGS=$(CFLAGS)
-OBJECTS=main.o Application.o
+OBJECTS=Application.o main.o
 BINARIES=clock
 
 # Where our library resides. You mostly only need to change the
@@ -25,7 +25,7 @@ clock : $(OBJECTS) $(RGB_LIBRARY)
 
 %.o : %.cc
 	$(CXX) -I$(RGB_INCDIR) $(CXXFLAGS) -c -o $@ $<
-    
+
 %.o : %.c
 	$(CC) -I$(RGB_INCDIR) $(CFLAGS) -c -o $@ $<
 

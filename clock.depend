@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1476554786 source:/home/pi/git/led-matrix-clock/Application.cpp
+	"Application.h"
+	"led-matrix.h"
+	<unistd.h>
+	<math.h>
+	<stdio.h>
+	<cstring>
+	<signal.h>
+	<time.h>
+
+1476551190 /home/pi/git/led-matrix-clock/Application.h
+	"led-matrix.h"
+
+1476452546 /home/pi/git/rpi-rgb-led-matrix/include/led-matrix.h
+	<stdint.h>
+	<string>
+	<vector>
+	"gpio.h"
+	"canvas.h"
+	"thread.h"
+	"transformer.h"
+
+1476452546 /home/pi/git/rpi-rgb-led-matrix/include/gpio.h
+	<stdint.h>
+	<vector>
+
+1476452546 /home/pi/git/rpi-rgb-led-matrix/include/canvas.h
+	<stdint.h>
+
+1476452546 /home/pi/git/rpi-rgb-led-matrix/include/thread.h
+	<stdint.h>
+	<pthread.h>
+
+1476452546 /home/pi/git/rpi-rgb-led-matrix/include/transformer.h
+	<vector>
+	<cstddef>
+	"canvas.h"
+
+1476532812 source:/home/pi/git/led-matrix-clock/main.cpp
+	"Application.h"
+

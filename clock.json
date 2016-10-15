@@ -1,0 +1,30 @@
+{
+    pages: {
+        main: {
+            widgets: [
+                {
+                    type: "basic_clock",
+                    
+                    position: {
+                        x = 0,
+                        y = 2                
+                    },
+                    
+                    color: {
+                        r = 240,
+                        g = 60,
+                        b = 180
+                    },
+
+                    options: {
+                        w: 14,
+                        h: 31,
+                        t: 3,
+                        s: 2,
+                        d: 3
+                    }
+                }
+            }
+        }
+    }
+}
