@@ -1,8 +1,17 @@
+#ifndef __APPLICATION_H
+#define __APPLICATION_H
+
+//
+// Forward declarations
+//
 namespace rgb_matrix
 {
     class Canvas;
 }
 
+//
+// Application
+//
 class Application
 {
 private: 
@@ -18,3 +27,5 @@ public:
 
     int ExitCode();
 };
+
+#endif

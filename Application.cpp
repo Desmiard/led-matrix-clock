@@ -66,3 +66,8 @@ void Application::Run()
     mCanvas->Clear();
     delete mCanvas;
 }
+
+int Application::ExitCode()
+{
+    return 0;
+}
