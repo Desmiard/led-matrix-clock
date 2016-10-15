@@ -17,7 +17,7 @@ all : $(BINARIES)
 $(RGB_LIBRARY): FORCE
 	$(MAKE) -C $(RGB_LIBDIR)
 
-clock : main.o Application.o $(RGB_LIBRARY)
+clock : $(OBJECTS) $(RGB_LIBRARY)
 	$(CXX) $< -o $@ $(LDFLAGS)
 
 %.o : %.cpp
