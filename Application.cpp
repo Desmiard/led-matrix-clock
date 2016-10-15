@@ -51,7 +51,7 @@ bool Application::Init(int argc, char *argv[])
 void Application::DrawFrame()
 {
     mCanvas->Clear();
-    mCanvas.SetPixel(10, 10, 255, 255, 255);
+    mCanvas->SetPixel(10, 10, 255, 255, 255);
 }
 
 void Application::Run()
