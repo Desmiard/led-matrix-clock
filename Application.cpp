@@ -1,6 +1,6 @@
 #include "Application.h"
 
-#include "lib/led-matrix.h"
+#include "led-matrix.h"
 #include <unistd.h>
 #include <math.h>
 #include <stdio.h>
@@ -48,7 +48,7 @@ bool Application::Init(int argc, char *argv[])
     return true;
 }
 
-static void DrawFrame(Canvas *canvas)
+void Application::DrawFrame()
 {
     mCanvas->Clear();
     mCanvas.SetPixel(10, 10, 255, 255, 255);
@@ -66,5 +66,3 @@ void Application::Run()
     mCanvas->Clear();
     delete mCanvas;
 }
-
-

@@ -1,6 +1,6 @@
 CFLAGS=-Wall -O3 -g
 CXXFLAGS=$(CFLAGS)
-OBJECTS=main.o application.o
+OBJECTS=main.o Application.o
 BINARIES=clock
 
 # Where our library resides. You mostly only need to change the
@@ -17,7 +17,7 @@ all : $(BINARIES)
 $(RGB_LIBRARY): FORCE
 	$(MAKE) -C $(RGB_LIBDIR)
 
-clock : main.o application.o $(RGB_LIBRARY)
+clock : main.o Application.o $(RGB_LIBRARY)
 	$(CXX) $< -o $@ $(LDFLAGS)
 
 %.o : %.cpp

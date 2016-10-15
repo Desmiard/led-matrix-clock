@@ -8,6 +8,7 @@ class Application
 private: 
     rgb_matrix::Canvas * mCanvas;
 
+    void DrawFrame();
 public:
     Application();
     ~Application();
