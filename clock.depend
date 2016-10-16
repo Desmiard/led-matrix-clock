@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1476617933 source:/home/pi/git/led-matrix-clock/Application.cpp
+1476621392 source:/home/pi/git/led-matrix-clock/Application.cpp
 	"Application.h"
 	"led-matrix.h"
 	<unistd.h>
@@ -8,11 +8,14 @@
 	<cstring>
 	<signal.h>
 	<time.h>
+	"basicclock.h"
 
-1476617862 /home/pi/git/led-matrix-clock/Application.h
+1476621273 /home/pi/git/led-matrix-clock/Application.h
 	<stdint.h>
+	<memory>
 	"led-matrix.h"
 	"bitmap.h"
+	"widget.h"
 
 1476452546 /home/pi/git/rpi-rgb-led-matrix/include/led-matrix.h
 	<stdint.h>
@@ -48,9 +51,19 @@
 1476612121 source:/home/pi/git/led-matrix-clock/color.cpp
 	"color.h"
 
-1476618031 /home/pi/git/led-matrix-clock/bitmap.h
+1476618325 /home/pi/git/led-matrix-clock/bitmap.h
 	<vector>
 	"led-matrix.h"
 	"stdint.h"
 	"color.h"
+
+1476618325 source:/home/pi/git/led-matrix-clock/bitmap.cpp
+	"bitmap.h"
+
+1476621290 /home/pi/git/led-matrix-clock/widget.h
+	"bitmap.h"
+
+1476621327 /home/pi/git/led-matrix-clock/basicclock.h
+	"color.h"
+	"widget.h"
 

@@ -2,8 +2,10 @@
 #define __APPLICATION_H
 
 #include <stdint.h>
+#include <memory>
 #include "led-matrix.h"
 #include "bitmap.h"
+#include "widget.h"
 
 //
 // Application
@@ -12,21 +14,9 @@ class Application
 {
 private:
     rgb_matrix::Canvas * mCanvas;
-    Bitmap mFrontBuffer;
-    Color mColor;
+    Bitmap               mFrontBuffer;
 
-    void DrawSeg(int x, int y, int w, int h, int t, uint8_t m);
-    void DrawDig(int x, int y, int w, int h, int t, uint8_t v);
-
-    void DrawVSeg(int x, int y, int w, int h);
-    void DrawHSeg(int x, int y, int w, int h);
-
-    void Draw2Dig(int x, int y, int w, int h, int t, int s, uint8_t v);
-
-    void DrawClock(int x, int y, int w, int h, int t, int ds, int dv, uint8_t d1, uint8_t d2, bool div);
-
-    void DrawDiv(int x, int y, int w, int h, int t);
-
+    std::shared_ptr<Widget> mBasicClock;
 
     void DrawFrame();
 public:

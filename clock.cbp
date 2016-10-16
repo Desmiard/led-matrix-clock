@@ -40,11 +40,15 @@
 		</Linker>
 		<Unit filename="Application.cpp" />
 		<Unit filename="Application.h" />
+		<Unit filename="basicclock.cpp" />
+		<Unit filename="basicclock.h" />
 		<Unit filename="bitmap.cpp" />
 		<Unit filename="bitmap.h" />
 		<Unit filename="color.cpp" />
 		<Unit filename="color.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="widget.cpp" />
+		<Unit filename="widget.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
