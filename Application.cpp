@@ -45,46 +45,11 @@ bool Application::Init(int argc, char *argv[])
     if (mCanvas == NULL) {
         return false;
     }
+    mFrontBuffer.Init(mCanvas->width(), mCanvas->height());
+    mColor = Color(0, 2, 2);
     signal(SIGTERM, InterruptHandler);
     signal(SIGINT, InterruptHandler);
     return true;
-}
-
-void Application::Clear()
-{
-    memset(mBackBuffer, 0, sizeof(mBackBuffer));
-}
-
-void Application::Blt()
-{
-    for (int j = 0; j < HEIGHT; ++j) {
-        for (int i = 0; i < WIDTH; ++i) {
-            Color & c = mBackBuffer[j][i];
-            mCanvas->SetPixel(i, j, c.R(), c.G(), c.B());
-        }
-    }
-}
-
-void Application::LineV(int x, int y, int h)
-{
-    Rectangle(x, y, 1, h);
-}
-
-void Application::LineH(int x, int y, int w)
-{
-    Rectangle(x, y, w, 1);
-}
-
-void Application::Rectangle(int x, int y, int w, int h)
-{
-    for (int j = y, k = y + h ; j < k; ++j) {
-        for (int i = x, l = x + w; i < l; ++i) {
-            mBackBuffer[j][i] = Color(0, 2, 2);
-            //mBackBuffer[j][i] = Color(0, 64, 64);            
-            //mBackBuffer[j][i] = Color(240, 60, 180);
-            //mBackBuffer[j][i] = Color(0, 255, 255);
-        }
-    }
 }
 
 void Application::DrawVSeg(int x, int y, int w, int h)
@@ -93,14 +58,14 @@ void Application::DrawVSeg(int x, int y, int w, int h)
     int m = w - 2 * f;
     for (int i = 0; i < f; ++i) {
         int k = f - i;
-        LineV(x + i, y + k, h - 2 * k);
+        mFrontBuffer.LineV(x + i, y + k, h - 2 * k, mColor);
     }
     for (int i = 0, o = f; i < m; ++i) {
-        LineV(x + i + o, y, h);
+        mFrontBuffer.LineV(x + i + o, y, h, mColor);
     }
     for (int i = 0, o = f + m; i < f; ++i) {
         int k = i + 1;
-        LineV(x + i + o, y + k, h - 2 * k);
+        mFrontBuffer.LineV(x + i + o, y + k, h - 2 * k, mColor);
     }
 }
 
@@ -110,14 +75,14 @@ void Application::DrawHSeg(int x, int y, int w, int h)
     int m = h - 2 * f;
     for (int i = 0; i < f; ++i) {
         int k = f - i;
-        LineH(x + k, y + i, w - 2 * k);
+        mFrontBuffer.LineH(x + k, y + i, w - 2 * k, mColor);
     }
     for (int i = 0, o = f; i < m; ++i) {
-        LineH(x, y + i + o, w);
+        mFrontBuffer.LineH(x, y + i + o, w, mColor);
     }
     for (int i = 0, o = f + m; i < f; ++i) {
         int k = i + 1;
-        LineH(x + k, y + i + o, w - 2 * k);
+        mFrontBuffer.LineH(x + k, y + i + o, w - 2 * k, mColor);
     }
 }
 
@@ -189,8 +154,8 @@ void Application::DrawDiv(int x, int y, int w, int h, int t)
     int y1 = y0 - t2 - t2;
     int y2 = y0 + q;
 
-    Rectangle(px, y1, t2, t2);
-    Rectangle(px, y2, t2, t2);
+    mFrontBuffer.Rectangle(px, y1, t2, t2, mColor);
+    mFrontBuffer.Rectangle(px, y2, t2, t2, mColor);
 }
 
 void Application::DrawClock(int x, int y, int w, int h, int t, int ds, int dv, uint8_t d1, uint8_t d2, bool div)
@@ -204,7 +169,7 @@ void Application::DrawClock(int x, int y, int w, int h, int t, int ds, int dv, u
 
 void Application::DrawFrame()
 {
-    Clear();
+    mFrontBuffer.Clear();
 
     time_t t = time(NULL);
 
@@ -214,7 +179,7 @@ void Application::DrawFrame()
     //DrawClock(0, 2, 8, 15, 1, 1, 1, (uint8_t)ti->tm_hour, (uint8_t)ti->tm_min, ti->tm_sec % 2);
     //DrawClock(0, 2, 14, 29, 3, 1, 3, (uint8_t)ti->tm_min, (uint8_t)ti->tm_sec, ti->tm_sec % 2);
     //DrawClock(0, 2, 14, 29, 3, 1, 3, 88, 88, true);
-    Blt();
+    mFrontBuffer.Blt(mCanvas);
 }
 
 void Application::Run()

@@ -1,16 +1,9 @@
 #ifndef __APPLICATION_H
 #define __APPLICATION_H
 
+#include <stdint.h>
 #include "led-matrix.h"
-#include "color.h"
-
-//
-// Forward declarations
-//
-namespace rgb_matrix
-{
-    class Canvas;
-}
+#include "bitmap.h"
 
 //
 // Application
@@ -19,14 +12,8 @@ class Application
 {
 private:
     rgb_matrix::Canvas * mCanvas;
-
-    enum
-    {
-        WIDTH = 64,
-        HEIGHT = 32,
-    };
-
-    Color mBackBuffer[HEIGHT][WIDTH];
+    Bitmap mFrontBuffer;
+    Color mColor;
 
     void DrawSeg(int x, int y, int w, int h, int t, uint8_t m);
     void DrawDig(int x, int y, int w, int h, int t, uint8_t v);
@@ -40,12 +27,6 @@ private:
 
     void DrawDiv(int x, int y, int w, int h, int t);
 
-    void LineV(int x, int y, int h);
-    void LineH(int x, int y, int w);
-    void Rectangle(int x, int y, int w, int h);
-
-    void Clear();
-    void Blt();
 
     void DrawFrame();
 public:
