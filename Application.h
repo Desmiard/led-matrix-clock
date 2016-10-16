@@ -2,6 +2,7 @@
 #define __APPLICATION_H
 
 #include "led-matrix.h"
+#include "color.h"
 
 //
 // Forward declarations
@@ -18,13 +19,6 @@ class Application
 {
 private:
     rgb_matrix::Canvas * mCanvas;
-
-    struct Color
-    {
-        uint8_t r;
-        uint8_t g;
-        uint8_t b;
-    };
 
     enum
     {

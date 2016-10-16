@@ -60,7 +60,7 @@ void Application::Blt()
     for (int j = 0; j < HEIGHT; ++j) {
         for (int i = 0; i < WIDTH; ++i) {
             Color & c = mBackBuffer[j][i];
-            mCanvas->SetPixel(i, j, c.r, c.g, c.b);
+            mCanvas->SetPixel(i, j, c.R(), c.G(), c.B());
         }
     }
 }
@@ -79,10 +79,10 @@ void Application::Rectangle(int x, int y, int w, int h)
 {
     for (int j = y, k = y + h ; j < k; ++j) {
         for (int i = x, l = x + w; i < l; ++i) {
-            Color & c = mBackBuffer[j][i];
-            c.r = 240;
-            c.g = 60;
-            c.b = 180;
+            mBackBuffer[j][i] = Color(0, 2, 2);
+            //mBackBuffer[j][i] = Color(0, 64, 64);            
+            //mBackBuffer[j][i] = Color(240, 60, 180);
+            //mBackBuffer[j][i] = Color(0, 255, 255);
         }
     }
 }
