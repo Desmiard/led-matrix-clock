@@ -63,6 +63,10 @@
 		<Unit filename="json/value.h" />
 		<Unit filename="json/writer.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="page.cpp" />
+		<Unit filename="page.h" />
+		<Unit filename="preset.cpp" />
+		<Unit filename="preset.h" />
 		<Unit filename="widget.cpp" />
 		<Unit filename="widget.h" />
 		<Extensions>

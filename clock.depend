@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1476621706 source:/home/pi/git/led-matrix-clock/Application.cpp
+1476630061 source:/home/pi/git/led-matrix-clock/Application.cpp
 	"Application.h"
 	"led-matrix.h"
 	<unistd.h>
@@ -9,13 +9,17 @@
 	<signal.h>
 	<time.h>
 	"basicclock.h"
+	"json/json.h"
 
-1476621706 /home/pi/git/led-matrix-clock/Application.h
+1476627840 /home/pi/git/led-matrix-clock/Application.h
 	<stdint.h>
+	<string>
 	<memory>
+	<vector>
 	"led-matrix.h"
 	"bitmap.h"
 	"widget.h"
+	"preset.h"
 
 1476452546 /home/pi/git/rpi-rgb-led-matrix/include/led-matrix.h
 	<stdint.h>
@@ -60,17 +64,18 @@
 1476618325 source:/home/pi/git/led-matrix-clock/bitmap.cpp
 	"bitmap.h"
 
-1476621706 /home/pi/git/led-matrix-clock/widget.h
+1476629023 /home/pi/git/led-matrix-clock/widget.h
 	"bitmap.h"
+	"json/json.h"
 
-1476621706 /home/pi/git/led-matrix-clock/basicclock.h
+1476621327 /home/pi/git/led-matrix-clock/basicclock.h
 	"color.h"
 	"widget.h"
 
-1476621706 source:/home/pi/git/led-matrix-clock/basicclock.cpp
+1476622206 source:/home/pi/git/led-matrix-clock/basicclock.cpp
 	"basicclock.h"
 
-1476621706 source:/home/pi/git/led-matrix-clock/widget.cpp
+1476629930 source:/home/pi/git/led-matrix-clock/widget.cpp
 	"widget.h"
 
 1476625112 source:/home/pi/git/led-matrix-clock/json/json_reader.cpp
@@ -110,4 +115,81 @@
 	<cpptl/forwards.h>
 
 1476625112 /home/pi/git/led-matrix-clock/json/json_tool.h
+
+1476625112 source:/home/pi/git/led-matrix-clock/json/json_writer.cpp
+	"writer.h"
+	"json_tool.h"
+	<utility>
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<sstream>
+	<iomanip>
+
+1476625112 /home/pi/git/led-matrix-clock/json/writer.h
+	"value.h"
+	<vector>
+	<string>
+	<iostream>
+
+1476628437 /home/pi/git/led-matrix-clock/preset.h
+	<string>
+	<vector>
+	<memory>
+	"bitmap.h"
+	"page.h"
+	"json/json.h"
+
+1476629318 /home/pi/git/led-matrix-clock/page.h
+	<string>
+	<vector>
+	<memory>
+	"bitmap.h"
+	"widget.h"
+	"json/json.h"
+
+1476625112 /home/pi/git/led-matrix-clock/json/json.h
+	"autolink.h"
+	"value.h"
+	"reader.h"
+	"writer.h"
+	"features.h"
+
+1476625112 /home/pi/git/led-matrix-clock/json/autolink.h
+	"config.h"
+	<cpptl/cpptl_autolink.h>
+	"autolink.h"
+
+1476625869 source:/home/pi/git/led-matrix-clock/json/json_value.cpp
+	"value.h"
+	"writer.h"
+	"json_batchallocator.h"
+	<iostream>
+	<utility>
+	<stdexcept>
+	<cstring>
+	<cassert>
+	<cpptl/conststring.h>
+	<cstddef>
+	"json_internalarray.inl"
+	"json_internalmap.inl"
+	"json_valueiterator.inl"
+
+1476625112 /home/pi/git/led-matrix-clock/json/json_batchallocator.h
+	<stdlib.h>
+	<assert.h>
+
+1476625112 /home/pi/git/led-matrix-clock/json/json_internalarray.inl
+
+1476625112 /home/pi/git/led-matrix-clock/json/json_internalmap.inl
+
+1476625112 /home/pi/git/led-matrix-clock/json/json_valueiterator.inl
+
+1476629789 source:/home/pi/git/led-matrix-clock/page.cpp
+	"page.h"
+	"basicclock.h"
+
+1476629884 source:/home/pi/git/led-matrix-clock/preset.cpp
+	"preset.h"
 

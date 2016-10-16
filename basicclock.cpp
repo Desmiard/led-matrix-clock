@@ -4,7 +4,7 @@
 // BasicClock
 //
 BasicClock::BasicClock()
-: mColor(Color(0, 32, 32))
+: mColor(0, 32, 32)
 , mX(0)
 , mY(2)
 , mWidth(14)

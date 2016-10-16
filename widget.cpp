@@ -15,6 +15,10 @@ void Widget::Draw(Bitmap & bitmap)
 {
 }
 
-void Widget::Init()
+void Widget::Init(const Json::Value & config)
+{
+}
+
+void Widget::Update()
 {
 }
