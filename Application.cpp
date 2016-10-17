@@ -33,7 +33,7 @@ namespace
 //
 Application::Application()
 #ifndef _MSC_VER
-: mCanvas(NULL)
+    : mCanvas(NULL)
 #endif
 {
 }
@@ -77,23 +77,50 @@ void Application::DrawFrame()
 #endif
 }
 
-void Application::Update()
+void Application::UpdateConfig()
 {
     auto changed = mFileMonitor.Update();
     if (!changed.empty()) {
         Configurate();
     }
+}
+
+void Application::UpdatePreset()
+{
+    auto preset = GetBestMatchingPreset();
+    if (preset != mCurrentPreset) {
+        if (mCurrentPreset) {
+            mCurrentPreset->Deactivate();
+        }
+        mCurrentPreset = preset;
+        if (mCurrentPreset) {
+            mCurrentPreset->Activate();
+        }
+    }
+}
+
+void Application::Update(int msec)
+{
+    UpdateConfig();
+    UpdatePreset();
     if (mCurrentPreset) {
-        mCurrentPreset->Update();
+        mCurrentPreset->Update(msec);
+    }
+}
+
+void Application::Loop()
+{
+    while (!interrupt_received) {
+        Update(mTimer.Elapsed());
+        DrawFrame();
+        mTimer.Sleep(15);
     }
 }
 
 void Application::Run()
 {
-    while (!interrupt_received) {
-        Update();
-        DrawFrame();
-    }
+    mTimer.Init();
+    Loop();
 #ifndef _MSC_VER
     mCanvas->Clear();
     delete mCanvas;
@@ -122,6 +149,9 @@ std::string Application::GetConfig()
 
 std::shared_ptr<Preset> Application::GetBestMatchingPreset()
 {
+    if (mDefaultPreset) {
+        return mDefaultPreset;
+    }
     if (!mPresetList.empty()) {
         return mPresetList.front();
     }
@@ -130,11 +160,14 @@ std::shared_ptr<Preset> Application::GetBestMatchingPreset()
 
 void Application::DoConfig()
 {
+#ifndef _MSC_VER
     mConfigFile = "/var/www/html/clock.json";
+#else 
+    mConfigFile = "clock.json";
+#endif
     mFileMonitor.AddWatch(mConfigFile);
     Configurate();
 }
-
 
 void Application::Configurate()
 {
@@ -143,12 +176,16 @@ void Application::Configurate()
     Json::Value json;
     Json::Reader reader;
     if (reader.parse(GetConfig(), json, true)) {
+        std::string defaultPreset = json["default_preset"].asString();
         const Json::Value & presets(json["presets"]);
         for (Json::Value::ArrayIndex i = 0; i < presets.size(); i++) {
             const Json::Value & presetConfig(presets.get(i, Json::Value::null));
-            mPresetList.push_back(std::make_shared<Preset>(presetConfig));
+            auto preset = std::make_shared<Preset>(presetConfig);
+            mPresetList.push_back(preset);
+            if (preset->Name() == defaultPreset) {
+                mDefaultPreset = preset;
+            }
         }
-        mCurrentPreset = GetBestMatchingPreset();
     }
 }
 

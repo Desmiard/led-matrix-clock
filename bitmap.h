@@ -19,7 +19,7 @@ private:
     int mHeight;
 
     inline bool IsValidPoint(int x, int y) { return (0 <= x && x < mWidth) && (0 <= y && y < mHeight); }
-    inline void SetPixelInt(int x, int y, const Color & c) { if (IsValidPoint(x,y)) { mData[y * mWidth + x] = c; } }
+    inline void SetPixelInt(int x, int y, const Color & c) { if (IsValidPoint(x, y)) { mData[y * mWidth + x] = c; } }
 
     inline Color & GetPixelInt(int x, int y) { return mData[y * mWidth + x]; }
 

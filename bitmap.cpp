@@ -4,8 +4,8 @@
 // Bitmap
 //
 Bitmap::Bitmap()
-: mWidth(-1)
-, mHeight(-1)
+    : mWidth(-1)
+    , mHeight(-1)
 {
 }
 

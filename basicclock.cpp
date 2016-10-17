@@ -5,26 +5,26 @@
 // BasicClock
 //
 BasicClock::BasicClock()
-: mColor(0, 32, 32)
-, mX(0)
-, mY(2)
-, mWidth(14)
-, mHeight(29)
-, mThickness(3)
-, mSpace(1)
-, mDivider(3)
+    : mColor(0, 32, 32)
+    , mX(0)
+    , mY(2)
+    , mWidth(14)
+    , mHeight(29)
+    , mThickness(3)
+    , mSpace(1)
+    , mDivider(3)
 {
 }
 
 BasicClock::BasicClock(int x, int y, int w, int h, int t, int ds, int dv, const Color & c)
-: mColor(c)
-, mX(x)
-, mY(y)
-, mWidth(w)
-, mHeight(h)
-, mThickness(t)
-, mSpace(ds)
-, mDivider(dv)
+    : mColor(c)
+    , mX(x)
+    , mY(y)
+    , mWidth(w)
+    , mHeight(h)
+    , mThickness(t)
+    , mSpace(ds)
+    , mDivider(dv)
 {
 }
 
@@ -110,11 +110,11 @@ void BasicClock::DrawSeg(Bitmap & bitmap, int x, int y, int w, int h, int t, uin
 {
     int t2 = t + (h - 3 * t) % 2;
 
-    int f  = (t  - 1) / 2;
+    int f = (t - 1) / 2;
     int f2 = (t2 - 1) / 2;
 
-    int tf  = t - f;
-    int thm  = t2 - 2 * f2;
+    int tf = t - f;
+    int thm = t2 - 2 * f2;
 
     int hv = (h - (tf + tf + thm)) / 2;
     int yv1 = y + tf;
@@ -123,25 +123,25 @@ void BasicClock::DrawSeg(Bitmap & bitmap, int x, int y, int w, int h, int t, uin
     int xv1 = x;
     int xv2 = x + w - t;
 
-    int xh  = x + tf;
-    int wh  = w - 2 * tf;
+    int xh = x + tf;
+    int wh = w - 2 * tf;
     int yh1 = y;
     int yh2 = y + (h - t2) / 2;
     int yh3 = y + h - t;
 
-    if (TestBit(0, m))DrawVSeg(bitmap, xv1, yv1,  t, hv);
-    if (TestBit(2, m))DrawVSeg(bitmap, xv2, yv1,  t, hv);
-    if (TestBit(4, m))DrawVSeg(bitmap, xv1, yv2,  t, hv);
-    if (TestBit(5, m))DrawVSeg(bitmap, xv2, yv2,  t, hv);
-    if (TestBit(1, m))DrawHSeg(bitmap, xh, yh1, wh, t);
-    if (TestBit(3, m))DrawHSeg(bitmap, xh, yh2, wh, t2);
-    if (TestBit(6, m))DrawHSeg(bitmap, xh, yh3, wh, t);
+    if (TestBit(0, m)) DrawVSeg(bitmap, xv1, yv1, t, hv);
+    if (TestBit(2, m)) DrawVSeg(bitmap, xv2, yv1, t, hv);
+    if (TestBit(4, m)) DrawVSeg(bitmap, xv1, yv2, t, hv);
+    if (TestBit(5, m)) DrawVSeg(bitmap, xv2, yv2, t, hv);
+    if (TestBit(1, m)) DrawHSeg(bitmap, xh, yh1, wh, t);
+    if (TestBit(3, m)) DrawHSeg(bitmap, xh, yh2, wh, t2);
+    if (TestBit(6, m)) DrawHSeg(bitmap, xh, yh3, wh, t);
 }
 
 void BasicClock::Draw2Dig(Bitmap & bitmap, int x, int y, int w, int h, int t, int s, uint8_t v)
 {
-    DrawDig(bitmap, x, y, w , h, t, (v / 10) % 10);
-    DrawDig(bitmap, x + s + w, y, w , h, t, (v % 10));
+    DrawDig(bitmap, x, y, w, h, t, (v / 10) % 10);
+    DrawDig(bitmap, x + s + w, y, w, h, t, (v % 10));
 }
 
 void BasicClock::DrawDiv(Bitmap & bitmap, int x, int y, int w, int h, int t)

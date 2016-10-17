@@ -18,14 +18,24 @@ private:
     std::vector<std::shared_ptr<Page>> mPageList;
     std::shared_ptr<Page> mCurrentPage;
 
+    int mTimer;
+    std::shared_ptr<Page> GetNextPage(std::shared_ptr<Page> page);
+
+    void SetPage(std::shared_ptr<Page> page);
+    void UpdatePage(int msec);
 public:
     Preset();
     Preset(const Json::Value & config);
     ~Preset();
 
     void Init(const Json::Value & config);
-    void Update();
+    void Update(int msec);
     void Draw(Bitmap & bitmap);
+
+    void Activate();
+    void Deactivate();
+
+    inline const std::string & Name() const { return mName; }
 };
 
 #endif//__PRESET_H

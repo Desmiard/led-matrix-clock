@@ -26,15 +26,60 @@ void Preset::Init(const Json::Value & config)
     }
 }
 
-void Preset::Update()
+void Preset::Activate()
+{
+    SetPage(mPageList.front());
+
+}
+
+void Preset::Deactivate()
+{
+}
+
+void Preset::SetPage(std::shared_ptr<Page> page)
+{
+    mTimer = 0;
+    mCurrentPage = page;
+}
+
+std::shared_ptr<Page> Preset::GetNextPage(std::shared_ptr<Page> page)
+{
+    std::vector<std::shared_ptr<Page>>::iterator next = mPageList.end();
+    for (auto it = mPageList.begin(); it != mPageList.end(); ++it) {
+        if ((*it) == page) {
+            next = it;
+            break;
+        }
+    }
+    if (next != mPageList.end()) {
+        ++next;
+    }
+    if (next != mPageList.end()) {
+        return (*next);
+    }
+    return mPageList.front();
+}
+
+void Preset::UpdatePage(int msec)
 {
     if (!mCurrentPage) {
         if (!mPageList.empty()) {
             mCurrentPage = mPageList.front();
         }
     }
+    mTimer += msec;
     if (mCurrentPage) {
-        mCurrentPage->Update();
+        if (mPageList.size() > 1 && mCurrentPage->Duration() >= 0 && mTimer > mCurrentPage->Duration() * 1000) {
+            SetPage(GetNextPage(mCurrentPage));
+        }
+    }
+}
+
+void Preset::Update(int msec)
+{
+    UpdatePage(msec);
+    if (mCurrentPage) {
+        mCurrentPage->Update(msec);
     }
 }
 

@@ -57,6 +57,8 @@
 		<Unit filename="page.h" />
 		<Unit filename="preset.cpp" />
 		<Unit filename="preset.h" />
+		<Unit filename="timer.cpp" />
+		<Unit filename="timer.h" />
 		<Unit filename="widget.cpp" />
 		<Unit filename="widget.h" />
 		<Extensions>

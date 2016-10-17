@@ -8,7 +8,7 @@
 // BasicClock
 //
 class BasicClock
-: public Widget
+    : public Widget
 {
 private:
     Color mColor;

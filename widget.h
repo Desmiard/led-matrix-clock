@@ -12,7 +12,7 @@ class Widget
 public:
     Widget();
     virtual ~Widget();
-    virtual void Update();
+    virtual void Update(int msec);
     virtual void Draw(Bitmap & bitmap);
     virtual void Init(const Json::Value & config);
 };

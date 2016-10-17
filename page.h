@@ -13,6 +13,8 @@
 //
 class Page
 {
+    int mDuration;
+
     std::string mName;
     std::vector<std::shared_ptr<Widget>> mWidgetList;
 public:
@@ -21,8 +23,14 @@ public:
     ~Page();
 
     void Init(const Json::Value & config);
-    void Update();
+    void Update(int msec);
     void Draw(Bitmap & bitmap);
+
+
+    void Reset();
+
+    inline const std::string & Name() const { return mName; }
+    inline int Duration() const { return mDuration; }
 };
 
 

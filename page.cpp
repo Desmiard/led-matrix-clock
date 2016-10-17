@@ -4,6 +4,7 @@
 // Page
 //
 Page::Page()
+    : mDuration(-1)
 {
 }
 
@@ -19,6 +20,7 @@ Page::~Page()
 void Page::Init(const Json::Value & config)
 {
     mName = config["name"].asString();
+    mDuration = config["duration"].asInt();
     const Json::Value & widgets(config["widgets"]);
     for (Json::Value::ArrayIndex i = 0; i < widgets.size(); i++) {
         const Json::Value & widgetConfig(widgets.get(i, Json::Value::null));
@@ -34,10 +36,15 @@ void Page::Init(const Json::Value & config)
     }
 }
 
-void Page::Update()
+void Page::Reset()
+{
+
+}
+
+void Page::Update(int msec)
 {
     for (auto widget : mWidgetList) {
-        widget->Update();
+        widget->Update(msec);
     }
 }
 

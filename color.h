@@ -14,10 +14,10 @@ private:
     uint8_t mB;
 
 public:
-    inline Color(): mR(0u), mG(0u), mB(0u) { }
-    inline Color(const uint8_t r, const uint8_t g, const uint8_t b): mR(r), mG(g), mB(b) { }
+    inline Color() : mR(0u), mG(0u), mB(0u) {}
+    inline Color(const uint8_t r, const uint8_t g, const uint8_t b) : mR(r), mG(g), mB(b) {}
     inline Color(const Color & rh) { (*this) = rh; }
-    inline ~Color() {}    
+    inline ~Color() {}
 
     inline Color & operator=(const Color & rh) { mR = rh.mR; mG = rh.mG; mB = rh.mB; return (*this); }
 

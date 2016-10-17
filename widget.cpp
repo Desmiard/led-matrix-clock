@@ -19,6 +19,6 @@ void Widget::Init(const Json::Value & config)
 {
 }
 
-void Widget::Update()
+void Widget::Update(int msec)
 {
 }

@@ -40,6 +40,9 @@
     <ClCompile Include="filemonitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -66,6 +69,11 @@
     <ClInclude Include="json\json.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="filemonitor.h" />
+    <ClInclude Include="filemonitor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

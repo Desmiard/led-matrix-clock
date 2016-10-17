@@ -12,6 +12,7 @@
 #include "widget.h"
 #include "preset.h"
 #include "filemonitor.h"
+#include "timer.h"
 
 //
 // Application
@@ -19,26 +20,32 @@
 class Application
 {
 private:
-    #ifndef _MSC_VER
+#ifndef _MSC_VER
     rgb_matrix::Canvas * mCanvas;
-    #endif
+#endif
     Bitmap               mFrontBuffer;
 
     std::vector<std::shared_ptr<Preset>> mPresetList;
 
     std::shared_ptr<Preset> mCurrentPreset;
-
+    std::shared_ptr<Preset> mDefaultPreset;
 
     std::string GetConfig();
     std::shared_ptr<Preset> GetBestMatchingPreset();
 
     std::string mConfigFile;
     FileMonitor mFileMonitor;
+    Timer       mTimer;
 
     void DoConfig();
     void Configurate();
-    void Update();
+    void Update(int msec);
+
+    void UpdateConfig();
+    void UpdatePreset();
+
     void DrawFrame();
+    void Loop();
 public:
     Application();
     ~Application();
