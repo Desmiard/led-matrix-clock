@@ -1,5 +1,6 @@
 #include "page.h"
 #include "basicclock.h"
+#include "colorrect.h"
 //
 // Page
 //
@@ -28,6 +29,9 @@ void Page::Init(const Json::Value & config)
         std::shared_ptr<Widget> widget;
         if (type == "basic_clock") {
             widget = std::make_shared<BasicClock>();
+        }
+        else if (type == "color_rect") {
+            widget = std::make_shared<ColorRect>();
         }
         if (widget) {
             widget->Init(widgetConfig);

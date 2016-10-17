@@ -43,6 +43,9 @@
     <ClCompile Include="timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="colorrect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -73,6 +76,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="timer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="colorrect.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

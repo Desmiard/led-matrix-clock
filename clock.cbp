@@ -46,7 +46,8 @@
 		<Unit filename="bitmap.h" />
 		<Unit filename="color.cpp" />
 		<Unit filename="color.h" />
-		<Unit filename="e" />
+		<Unit filename="colorrect.cpp" />
+		<Unit filename="colorrect.h" />
 		<Unit filename="filemonitor.cpp" />
 		<Unit filename="filemonitor.h" />
 		<Unit filename="json/json-forwards.h" />
@@ -60,7 +61,7 @@
 		<Unit filename="timer.cpp" />
 		<Unit filename="timer.h" />
 		<Unit filename="widget.cpp" />
-		<Unit filename="widget.h" />
+		<Unit filename="widget.h" />        
 		<Extensions>
 			<code_completion />
 			<debugger />

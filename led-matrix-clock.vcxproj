@@ -15,6 +15,7 @@
     <ClCompile Include="basicclock.cpp" />
     <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="colorrect.cpp" />
     <ClCompile Include="filemonitor.cpp" />
     <ClCompile Include="json\jsoncpp.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,6 +30,7 @@
     <ClInclude Include="bitmap.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="filemonitor.h" />
+    <ClInclude Include="colorrect.h" />
     <ClInclude Include="json\json.h" />
     <ClInclude Include="page.h" />
     <ClInclude Include="preset.h" />
