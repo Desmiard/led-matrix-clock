@@ -10,79 +10,62 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lib\bdf-font.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\framebuffer.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\gpio.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\graphics.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\hardware-mapping.c">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\led-matrix.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\led-matrix-c.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\options-initialize.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\thread.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\transformer.cpp">
-      <Filter>Lib</Filter>
-    </ClCompile>
-    <ClCompile Include="clock.cpp">
+    <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="basicclock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bitmap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="page.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="preset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="json\jsoncpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filemonitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\canvas.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\gpio.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\graphics.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\led-matrix-c.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\led-matrix.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\thread.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\threaded-canvas-manipulator.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\transformer.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\framebuffer-internal.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\hardware-mapping.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\utf8-internal.h">
-      <Filter>Lib</Filter>
-    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="basicclock.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmap.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="page.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="preset.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widget.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="filemonitor.h" />
   </ItemGroup>
 </Project>

@@ -29,7 +29,12 @@ void Preset::Init(const Json::Value & config)
 void Preset::Update()
 {
     if (!mCurrentPage) {
-        mCurrentPage = mPageList.front();
+        if (!mPageList.empty()) {
+            mCurrentPage = mPageList.front();
+        }
+    }
+    if (mCurrentPage) {
+        mCurrentPage->Update();
     }
 }
 

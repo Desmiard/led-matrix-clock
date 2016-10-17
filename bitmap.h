@@ -2,7 +2,9 @@
 #define __BITMAP_H
 
 #include <vector>
+#ifndef _MSC_VER
 #include "led-matrix.h"
+#endif
 #include "stdint.h"
 #include "color.h"
 
@@ -34,8 +36,9 @@ public:
     void LineV(int x, int y, int h, const Color & c);
     void LineH(int x, int y, int w, const Color & c);
     void Rectangle(int x, int y, int w, int h, const Color & c);
-
+#ifndef _MSC_VER
     void Blt(rgb_matrix::Canvas * canvas);
+#endif
     void Blt(const Bitmap & bitmap);
 };
 

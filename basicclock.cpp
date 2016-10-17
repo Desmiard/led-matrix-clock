@@ -1,4 +1,5 @@
 #include "basicclock.h"
+#include <time.h>
 
 //
 // BasicClock
@@ -27,11 +28,29 @@ BasicClock::BasicClock(int x, int y, int w, int h, int t, int ds, int dv, const 
 {
 }
 
+void BasicClock::Init(const Json::Value & config)
+{
+    const Json::Value & position = config["position"];
+    mX = position["x"].asInt();
+    mY = position["y"].asInt();
+    const Json::Value & color = config["color"];
+    mColor.R() = (uint8_t)color["r"].asInt();
+    mColor.G() = (uint8_t)color["g"].asInt();
+    mColor.B() = (uint8_t)color["b"].asInt();
+
+    const Json::Value & options = config["options"];
+    mWidth = options["width"].asInt();
+    mHeight = options["height"].asInt();
+    mThickness = options["thickness"].asInt();
+    mSpace = options["space"].asInt();
+    mDivider = options["divider"].asInt();
+}
+
 void BasicClock::Draw(Bitmap & bitmap)
 {
     time_t t = time(NULL);
     tm * ti = localtime(&t);
-    DrawClock(bitmap, mX, mY, mWidth, mHeight, mThickness, mSpace, mDivider, (uint8_t)ti->tm_hour, (uint8_t)ti->tm_min, ti->tm_sec % 2);
+    DrawClock(bitmap, mX, mY, mWidth, mHeight, mThickness, mSpace, mDivider, (uint8_t)ti->tm_hour, (uint8_t)ti->tm_min, ti->tm_sec % 2 == 1);
 }
 
 void BasicClock::DrawVSeg(Bitmap & bitmap, int x, int y, int w, int h)
@@ -68,21 +87,21 @@ void BasicClock::DrawHSeg(Bitmap & bitmap, int x, int y, int w, int h)
     }
 }
 
-inline bool TestBit(int bit, uint8_t mask) { return (mask & 1 << bit); }
+inline bool TestBit(int bit, uint8_t mask) { return ((mask & 1 << bit) != 0); }
 
 void BasicClock::DrawDig(Bitmap & bitmap, int x, int y, int w, int h, int t, uint8_t v)
 {
     const uint8_t tt[] = {
-        0b01110111, // 0
-        0b00100100, // 1
-        0b01011110, // 2
-        0b01101110, // 3
-        0b00101101, // 4
-        0b01101011, // 5
-        0b01111011, // 6
-        0b00100110, // 7
-        0b01111111, // 8
-        0b01101111, // 9
+        0x77, // 0
+        0x24, // 1
+        0x5E, // 2
+        0x6E, // 3
+        0x2D, // 4
+        0x6B, // 5
+        0x7B, // 6
+        0x26, // 7
+        0x7F, // 8
+        0x6F, // 9
     };
     DrawSeg(bitmap, x, y, w, h, t, tt[v]);
 }

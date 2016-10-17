@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1476630061 source:/home/pi/git/led-matrix-clock/Application.cpp
+1476646166 source:/home/pi/git/led-matrix-clock/Application.cpp
 	"Application.h"
-	"led-matrix.h"
 	<unistd.h>
 	<math.h>
 	<stdio.h>
 	<cstring>
 	<signal.h>
 	<time.h>
+	<iostream>
+	<fstream>
 	"basicclock.h"
 	"json/json.h"
 
-1476627840 /home/pi/git/led-matrix-clock/Application.h
+1476643995 /home/pi/git/led-matrix-clock/Application.h
 	<stdint.h>
 	<string>
 	<memory>
@@ -20,6 +21,7 @@
 	"bitmap.h"
 	"widget.h"
 	"preset.h"
+	"filemonitor.h"
 
 1476452546 /home/pi/git/rpi-rgb-led-matrix/include/led-matrix.h
 	<stdint.h>
@@ -46,7 +48,7 @@
 	<cstddef>
 	"canvas.h"
 
-1476612088 source:/home/pi/git/led-matrix-clock/main.cpp
+1476532812 source:/home/pi/git/led-matrix-clock/main.cpp
 	"Application.h"
 
 1476612121 /home/pi/git/led-matrix-clock/color.h
@@ -55,25 +57,26 @@
 1476612121 source:/home/pi/git/led-matrix-clock/color.cpp
 	"color.h"
 
-1476618325 /home/pi/git/led-matrix-clock/bitmap.h
+1476637450 /home/pi/git/led-matrix-clock/bitmap.h
 	<vector>
 	"led-matrix.h"
 	"stdint.h"
 	"color.h"
 
-1476618325 source:/home/pi/git/led-matrix-clock/bitmap.cpp
+1476637206 source:/home/pi/git/led-matrix-clock/bitmap.cpp
 	"bitmap.h"
 
 1476629023 /home/pi/git/led-matrix-clock/widget.h
 	"bitmap.h"
 	"json/json.h"
 
-1476621327 /home/pi/git/led-matrix-clock/basicclock.h
+1476638048 /home/pi/git/led-matrix-clock/basicclock.h
 	"color.h"
 	"widget.h"
 
-1476622206 source:/home/pi/git/led-matrix-clock/basicclock.cpp
+1476638238 source:/home/pi/git/led-matrix-clock/basicclock.cpp
 	"basicclock.h"
+	<time.h>
 
 1476629930 source:/home/pi/git/led-matrix-clock/widget.cpp
 	"widget.h"
@@ -149,12 +152,36 @@
 	"widget.h"
 	"json/json.h"
 
-1476625112 /home/pi/git/led-matrix-clock/json/json.h
-	"autolink.h"
-	"value.h"
-	"reader.h"
-	"writer.h"
+1476631946 /home/pi/git/led-matrix-clock/json/json.h
+	<stddef.h>
+	<string>
+	<stdint.h>
+	<cpptl/config.h>
+	"version.h"
+	"allocator.h"
+	"config.h"
+	"forwards.h"
+	"forwards.h"
+	<string>
+	<vector>
+	<exception>
+	<map>
+	<cpptl/smallmap.h>
+	<cpptl/forwards.h>
 	"features.h"
+	"value.h"
+	<deque>
+	<iosfwd>
+	<stack>
+	<string>
+	<istream>
+	"value.h"
+	<vector>
+	<string>
+	<ostream>
+	<stdlib.h>
+	<sstream>
+	"config.h"
 
 1476625112 /home/pi/git/led-matrix-clock/json/autolink.h
 	"config.h"
@@ -190,6 +217,66 @@
 	"page.h"
 	"basicclock.h"
 
-1476629884 source:/home/pi/git/led-matrix-clock/preset.cpp
+1476637032 source:/home/pi/git/led-matrix-clock/preset.cpp
 	"preset.h"
+
+1476632379 source:/home/pi/git/led-matrix-clock/json/jsoncpp.cpp
+	"json.h"
+	<clocale>
+	<json/assertions.h>
+	<json/reader.h>
+	<json/value.h>
+	"json_tool.h"
+	<utility>
+	<cstdio>
+	<cassert>
+	<cstring>
+	<istream>
+	<sstream>
+	<memory>
+	<set>
+	<limits>
+	<json/assertions.h>
+	<json/value.h>
+	<json/writer.h>
+	<math.h>
+	<sstream>
+	<utility>
+	<cstring>
+	<cassert>
+	<cpptl/conststring.h>
+	<cstddef>
+	<algorithm>
+	"json_valueiterator.inl"
+	<json/writer.h>
+	"json_tool.h"
+	<iomanip>
+	<memory>
+	<sstream>
+	<utility>
+	<set>
+	<cassert>
+	<cstring>
+	<cstdio>
+	<float.h>
+	<ieeefp.h>
+	<math.h>
+	<math.h>
+	<cmath>
+	<float.h>
+
+1476646056 /home/pi/git/led-matrix-clock/filemonitor.h
+	<string>
+	<vector>
+	<utility>
+
+1476646854 source:/home/pi/git/led-matrix-clock/filemonitor.cpp
+	"filemonitor.h"
+	<stdio.h>
+	<stdlib.h>
+	<errno.h>
+	<unistd.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/inotify.h>
 

@@ -35,6 +35,7 @@ public:
     BasicClock(int x, int y, int w, int h, int t, int ds, int dv, const Color & c);
 
     virtual void Draw(Bitmap & bitmap) override;
+    virtual void Init(const Json::Value & config) override;
 };
 
 #endif//__BASIC_CLOCK_H

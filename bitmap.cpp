@@ -60,6 +60,7 @@ void Bitmap::Rectangle(int x, int y, int w, int h, const Color & c)
     }
 }
 
+#ifndef _MSC_VER
 void Bitmap::Blt(rgb_matrix::Canvas * canvas)
 {
     for (int j = 0, ej = canvas->height(); j < ej; ++j) {
@@ -71,6 +72,7 @@ void Bitmap::Blt(rgb_matrix::Canvas * canvas)
         }
     }
 }
+#endif
 
 void Bitmap::Blt(const Bitmap & bitmap)
 {
