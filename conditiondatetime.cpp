@@ -2,24 +2,21 @@
 #include "conditionfactory.h"
 #include "json/json.h"
 #include <iomanip>
-
+#include <ctime>
 
 namespace
 {
     inline tm ParseTime(const std::string & str)
     {
         std::tm t = {};
+#ifdef _MSC_VER
         std::istringstream ss(str);
         auto loc = std::locale();
-#ifndef _MSC_VER
-        ss.imbue(std::locale("en_US.UTF8"));
-#else
         ss.imbue(std::locale());
-#endif
         ss >> std::get_time(&t, "%H:%M");
-        if (!ss.fail()) {
-
-        }
+#else
+        strptime(str.c_str(), "%H:%M", &t);
+#endif
         return t;
     }
 
@@ -64,8 +61,12 @@ void ConditionTime::Init(const Json::Value & data)
 bool ConditionTime::Test() const
 {
     time_t t = time(NULL);
+#ifdef _MSC_VER
     tm ti;
     localtime_s(&ti, &t);
+#else
+    tm ti = (*localtime(&t));
+#endif
 
     if (CompareTime(mStop, mStart) > 0) {
         return (CompareTime(ti, mStart) >= 0 && CompareTime(ti, mStop) <= 0);
@@ -117,8 +118,12 @@ void ConditionWeekDay::Init(const Json::Value & data)
 bool ConditionWeekDay::Test() const
 {
     time_t t = time(NULL);
+#ifdef _MSC_VER
     tm ti;
     localtime_s(&ti, &t);
+#else
+    tm ti = (*localtime(&t));
+#endif
     return ((1 << (ti.tm_wday + 6) % 7) & mWeekdayMask) != 0;
 }
 

@@ -49,8 +49,12 @@ void BasicClock::Init(const Json::Value & config)
 void BasicClock::Draw(Bitmap & bitmap)
 {
     time_t t = time(NULL);
+#ifdef _MSC_VER
     tm ti;
     localtime_s(&ti, &t);
+#else
+    tm ti = (*localtime(&t));
+#endif
     DrawClock(bitmap, mX, mY, mWidth, mHeight, mThickness, mSpace, mDivider, (uint8_t)ti.tm_hour, (uint8_t)ti.tm_min, ti.tm_sec % 2 == 1);
 }
 
