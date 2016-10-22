@@ -1,4 +1,5 @@
 #include "preset.h"
+#include "conditionfactory.h"
 
 //
 // Preset
@@ -24,6 +25,18 @@ void Preset::Init(const Json::Value & config)
         const Json::Value & pageConfig(pages.get(i, Json::Value::null));
         mPageList.push_back(std::make_shared<Page>(pageConfig));
     }
+    const Json::Value & condition(config["condition"]);
+    if (condition.type() == Json::objectValue) {
+        mCondition = ConditionFactory::CreateInstance(condition);
+    }
+}
+
+bool Preset::Test() const
+{
+    if (mCondition) {
+        return mCondition->Test();
+    }
+    return false;
 }
 
 void Preset::Activate()

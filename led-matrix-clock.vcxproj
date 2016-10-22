@@ -16,6 +16,9 @@
     <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="colorrect.cpp" />
+    <ClCompile Include="conditiondatetime.cpp" />
+    <ClCompile Include="conditionfactory.cpp" />
+    <ClCompile Include="conditionslogic.cpp" />
     <ClCompile Include="filemonitor.cpp" />
     <ClCompile Include="json\jsoncpp.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,6 +32,10 @@
     <ClInclude Include="basicclock.h" />
     <ClInclude Include="bitmap.h" />
     <ClInclude Include="color.h" />
+    <ClInclude Include="condition.h" />
+    <ClInclude Include="conditiondatetime.h" />
+    <ClInclude Include="conditionfactory.h" />
+    <ClInclude Include="conditionslogic.h" />
     <ClInclude Include="filemonitor.h" />
     <ClInclude Include="colorrect.h" />
     <ClInclude Include="json\json.h" />

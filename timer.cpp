@@ -16,5 +16,5 @@ int Timer::Elapsed()
 {
     auto start = mMark;
     Init();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(mMark - start).count();
+    return static_cast<int>(std::chrono::duration_cast<std::chrono::milliseconds>(mMark - start).count());
 }

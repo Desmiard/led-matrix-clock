@@ -132,9 +132,9 @@ std::string ReadFileAsString(std::string fileName)
     std::ifstream file(fileName);
     if (file.is_open()) {
         file.seekg(0, std::ios::end);
-        size_t l = file.tellg();
+        std::streamoff l = file.tellg();
         file.seekg(0, std::ios::beg);
-        std::string result(l, ' ');
+        std::string result(static_cast<size_t>(l), ' ');
         file.read((char*)result.c_str(), result.length());
         file.close();
         return result;
@@ -149,6 +149,11 @@ std::string Application::GetConfig()
 
 std::shared_ptr<Preset> Application::GetBestMatchingPreset()
 {
+    for (auto it : mPresetList) {
+        if (it->Test()) {
+            return it;
+        }
+    }
     if (mDefaultPreset) {
         return mDefaultPreset;
     }

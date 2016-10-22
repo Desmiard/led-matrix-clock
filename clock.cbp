@@ -62,6 +62,13 @@
 		<Unit filename="timer.h" />
 		<Unit filename="widget.cpp" />
 		<Unit filename="widget.h" />        
+		<Unit filename="condition.h" />        
+		<Unit filename="conditionfactory.h" />
+		<Unit filename="conditionfactory.cpp" />        
+		<Unit filename="conditionslogic.h" />
+		<Unit filename="conditionslogic.cpp" />
+		<Unit filename="conditiondatetime.h" />
+		<Unit filename="conditiondatetime.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -6,6 +6,7 @@
 #include <memory>
 #include "bitmap.h"
 #include "page.h"
+#include "condition.h"
 #include "json/json.h"
 
 //
@@ -17,6 +18,7 @@ private:
     std::string mName;
     std::vector<std::shared_ptr<Page>> mPageList;
     std::shared_ptr<Page> mCurrentPage;
+    std::shared_ptr<Condition> mCondition;
 
     int mTimer;
     std::shared_ptr<Page> GetNextPage(std::shared_ptr<Page> page);
@@ -34,6 +36,8 @@ public:
 
     void Activate();
     void Deactivate();
+
+    bool Test() const;
 
     inline const std::string & Name() const { return mName; }
 };

@@ -46,6 +46,15 @@
     <ClCompile Include="colorrect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="conditionfactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="conditionslogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="conditiondatetime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -79,6 +88,18 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="colorrect.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conditionfactory.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conditionslogic.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="conditiondatetime.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
