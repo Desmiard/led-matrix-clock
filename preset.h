@@ -15,11 +15,13 @@
 class Preset final
 {
 private:
+
     std::string mName;
     std::vector<std::shared_ptr<Page>> mPageList;
     std::shared_ptr<Page> mCurrentPage;
     std::shared_ptr<Condition> mCondition;
 
+    bool mEnabled;
     int mTimer;
     std::shared_ptr<Page> GetNextPage(std::shared_ptr<Page> page);
 
@@ -38,6 +40,8 @@ public:
     void Deactivate();
 
     bool Test() const;
+
+    bool Enabled() const;
 
     inline const std::string & Name() const { return mName; }
 };

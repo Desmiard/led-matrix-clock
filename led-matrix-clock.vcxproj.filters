@@ -55,6 +55,9 @@
     <ClCompile Include="conditiondatetime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ClockDigitsHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -100,6 +103,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="conditiondatetime.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClockDigitsHelper.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

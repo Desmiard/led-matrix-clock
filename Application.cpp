@@ -135,7 +135,7 @@ std::string ReadFileAsString(std::string fileName)
         std::streamoff l = file.tellg();
         file.seekg(0, std::ios::beg);
         std::string result(static_cast<size_t>(l), ' ');
-        file.read((char*)result.c_str(), result.length());
+        file.read(const_cast<char*>(result.c_str()), result.length());
         file.close();
         return result;
     }
@@ -154,11 +154,13 @@ std::shared_ptr<Preset> Application::GetBestMatchingPreset()
             return it;
         }
     }
-    if (mDefaultPreset) {
+    if (mDefaultPreset && mDefaultPreset->Enabled()) {
         return mDefaultPreset;
     }
-    if (!mPresetList.empty()) {
-        return mPresetList.front();
+    for (auto it:mPresetList) {
+        if (it->Enabled()) {
+            return mPresetList.front();
+        }
     }
     return std::shared_ptr<Preset>();
 }

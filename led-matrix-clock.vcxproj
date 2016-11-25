@@ -14,6 +14,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="basicclock.cpp" />
     <ClCompile Include="bitmap.cpp" />
+    <ClCompile Include="ClockDigitsHelper.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="colorrect.cpp" />
     <ClCompile Include="conditiondatetime.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="basicclock.h" />
     <ClInclude Include="bitmap.h" />
+    <ClInclude Include="ClockDigitsHelper.h" />
     <ClInclude Include="color.h" />
     <ClInclude Include="condition.h" />
     <ClInclude Include="conditiondatetime.h" />

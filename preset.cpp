@@ -5,10 +5,12 @@
 // Preset
 //
 Preset::Preset()
+: mEnabled(true)
 {
 }
 
 Preset::Preset(const Json::Value & config)
+: mEnabled(true)
 {
     Init(config);
 }
@@ -20,29 +22,36 @@ Preset::~Preset()
 void Preset::Init(const Json::Value & config)
 {
     mName = config["name"].asString();
+    if (!config["enabled"].isNull()) {
+        mEnabled = config["enabled"].asBool();
+    }
     const Json::Value & pages(config["pages"]);
     for (Json::Value::ArrayIndex i = 0; i < pages.size(); i++) {
         const Json::Value & pageConfig(pages.get(i, Json::Value::null));
         mPageList.push_back(std::make_shared<Page>(pageConfig));
     }
     const Json::Value & condition(config["condition"]);
-    if (condition.type() == Json::objectValue) {
+    if (condition.isObject()) {
         mCondition = ConditionFactory::CreateInstance(condition);
     }
 }
 
 bool Preset::Test() const
 {
-    if (mCondition) {
+    if (Enabled() && mCondition) {
         return mCondition->Test();
     }
     return false;
 }
 
+bool Preset::Enabled() const
+{
+    return mEnabled;
+}
+
 void Preset::Activate()
 {
     SetPage(mPageList.front());
-
 }
 
 void Preset::Deactivate()
