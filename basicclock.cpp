@@ -1,11 +1,13 @@
 #include "basicclock.h"
 #include "ClockDigitsHelper.h"
 #include <time.h>
-
+#include "widgetfactory.h"
 
 //
 // BasicClock
 //
+REGISTER_WIDGET(BasicClock, basic_clock);
+
 BasicClock::BasicClock()
 : mColor(0, 32, 32)
 , mPosition(0, 2)

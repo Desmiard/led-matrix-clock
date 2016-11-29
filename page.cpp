@@ -1,6 +1,6 @@
 #include "page.h"
-#include "basicclock.h"
-#include "colorrect.h"
+#include "widgetfactory.h"
+
 //
 // Page
 //
@@ -25,14 +25,7 @@ void Page::Init(const Json::Value & config)
     const Json::Value & widgets(config["widgets"]);
     for (Json::Value::ArrayIndex i = 0; i < widgets.size(); i++) {
         const Json::Value & widgetConfig(widgets.get(i, Json::Value::null));
-        std::string type = widgetConfig["type"].asString();
-        std::shared_ptr<Widget> widget;
-        if (type == "basic_clock") {
-            widget = std::make_shared<BasicClock>();
-        }
-        else if (type == "color_rect") {
-            widget = std::make_shared<ColorRect>();
-        }
+        std::shared_ptr<Widget> widget = WidgetFactory::CreateInstance(widgetConfig);
         if (widget) {
             widget->Init(widgetConfig);
             mWidgetList.push_back(widget);

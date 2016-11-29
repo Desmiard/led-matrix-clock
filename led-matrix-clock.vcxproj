@@ -20,14 +20,18 @@
     <ClCompile Include="conditiondatetime.cpp" />
     <ClCompile Include="conditionfactory.cpp" />
     <ClCompile Include="conditionslogic.cpp" />
+    <ClCompile Include="datasourcefactory.cpp" />
+    <ClCompile Include="digitaldisplay.cpp" />
     <ClCompile Include="filemonitor.cpp" />
     <ClCompile Include="json\jsoncpp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="page.cpp" />
+    <ClCompile Include="timedatasource.cpp" />
     <ClCompile Include="vector2.cpp" />
     <ClCompile Include="preset.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="widget.cpp" />
+    <ClCompile Include="widgetfactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -39,15 +43,20 @@
     <ClInclude Include="conditiondatetime.h" />
     <ClInclude Include="conditionfactory.h" />
     <ClInclude Include="conditionslogic.h" />
+    <ClInclude Include="datasourcefactory.h" />
+    <ClInclude Include="digitaldisplay.h" />
     <ClInclude Include="filemonitor.h" />
     <ClInclude Include="colorrect.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="json\json.h" />
+    <ClInclude Include="datasource.h" />
     <ClInclude Include="page.h" />
+    <ClInclude Include="timedatasource.h" />
     <ClInclude Include="vector2.h" />
     <ClInclude Include="preset.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="widget.h" />
+    <ClInclude Include="widgetfactory.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B8195E2F-59F4-4AEE-BC14-114A7387BCC4}</ProjectGuid>

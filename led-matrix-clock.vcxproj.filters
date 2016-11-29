@@ -61,6 +61,18 @@
     <ClCompile Include="vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="digitaldisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timedatasource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="datasourcefactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgetfactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -115,6 +127,21 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="vector2.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="digitaldisplay.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="datasource.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timedatasource.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="datasourcefactory.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widgetfactory.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,10 @@
 #include "colorrect.h"
+#include "widgetfactory.h"
+
+//
+// ColorRect
+//
+REGISTER_WIDGET(ColorRect, color_rect);
 
 ColorRect::ColorRect()
 : mColor(Color::black)
