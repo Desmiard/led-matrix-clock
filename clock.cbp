@@ -46,6 +46,10 @@
 		<Unit filename="bitmap.h" />
 		<Unit filename="color.cpp" />
 		<Unit filename="color.h" />
+		<Unit filename="vector2.cpp" />
+		<Unit filename="vector2.h" />        
+		<Unit filename="ClockDigitsHelper.cpp" />
+		<Unit filename="ClockDigitsHelper.h" />                
 		<Unit filename="colorrect.cpp" />
 		<Unit filename="colorrect.h" />
 		<Unit filename="filemonitor.cpp" />

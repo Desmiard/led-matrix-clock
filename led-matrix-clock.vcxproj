@@ -24,6 +24,7 @@
     <ClCompile Include="json\jsoncpp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="page.cpp" />
+    <ClCompile Include="vector2.cpp" />
     <ClCompile Include="preset.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="widget.cpp" />
@@ -40,8 +41,10 @@
     <ClInclude Include="conditionslogic.h" />
     <ClInclude Include="filemonitor.h" />
     <ClInclude Include="colorrect.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="json\json.h" />
     <ClInclude Include="page.h" />
+    <ClInclude Include="vector2.h" />
     <ClInclude Include="preset.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="widget.h" />

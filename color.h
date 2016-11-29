@@ -2,6 +2,7 @@
 #define __COLOR_H
 
 #include <stdint.h>
+#include "json/json-forwards.h"
 
 //
 // Color
@@ -21,8 +22,8 @@ public:
 
     inline Color & operator=(const Color & rh) { mR = rh.mR; mG = rh.mG; mB = rh.mB; return (*this); }
 
-    inline bool operator==(Color & rh) const { return (mR == rh.mR && mG == rh.mG && mB == rh.mB); }
-    inline bool operator!=(Color & rh) const { return (mR != rh.mR || mG != rh.mG || mB != rh.mB); }
+    inline bool operator==(const Color & rh) const { return (mR == rh.mR && mG == rh.mG && mB == rh.mB); }
+    inline bool operator!=(const Color & rh) const { return (mR != rh.mR || mG != rh.mG || mB != rh.mB); }
 
     inline uint8_t & R() { return mR; }
     inline uint8_t & G() { return mG; }
@@ -31,6 +32,8 @@ public:
     inline uint8_t R() const { return mR; }
     inline uint8_t G() const { return mG; }
     inline uint8_t B() const { return mB; }
+
+    static Color FromJson(const Json::Value & val);
 
     static const Color black;
     static const Color white;
