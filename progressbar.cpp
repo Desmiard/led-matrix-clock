@@ -23,6 +23,12 @@ void ProgressBar::Init(const Json::Value & config)
     mDataSource = DataSourceFactory::CreateInstance(config["source"]);
     mColor = Color::FromJson(config["color"]);
 
+    auto value = config["value"];
+    if (value.isObject()) {
+        mMinValue = value["min"].asInt();
+        mMinValue = value["max"].asInt();
+    }
+
     if (config["inverse"].isBool()) {
         mInverseDirection = config["inverse"].asBool();
     }
