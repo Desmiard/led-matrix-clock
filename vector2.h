@@ -19,7 +19,7 @@ public:
     inline Vector2(const Vector2 & rh) { (*this) = rh; }
     inline ~Vector2() {}
 
-    inline Vector2 & operator=(const Vector2 & rh) { mX = rh.mX; mY = rh.mX; return (*this); }
+    inline Vector2 & operator=(const Vector2 & rh) { mX = rh.mX; mY = rh.mY; return (*this); }
 
     inline bool operator==(const Vector2 & rh) const { return (mX == rh.mX && mY == rh.mY); }
     inline bool operator!=(const Vector2 & rh) const { return (mX != rh.mX || mY != rh.mY); }

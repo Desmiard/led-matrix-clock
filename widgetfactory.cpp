@@ -1,5 +1,5 @@
-#include "Widget.h"
-#include "WidgetFactory.h"
+#include "widget.h"
+#include "widgetfactory.h"
 #include "json/json.h"
 
 WidgetFactory::Node * WidgetFactory::mNodeFirst = nullptr;
