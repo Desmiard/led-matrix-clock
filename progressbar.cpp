@@ -56,7 +56,7 @@ void ProgressBar::Draw(Bitmap & bmp)
         value = nds->GetData();
     }
 
-    float progress = static_cast<float>(value - mMinValue) / static_cast<float>(mMaxValue - mMinValue);
+    double progress = static_cast<double>(value - mMinValue) / static_cast<double>(mMaxValue - mMinValue);
 
     int x = mPosition.X();
     int y = mPosition.Y();
@@ -64,23 +64,21 @@ void ProgressBar::Draw(Bitmap & bmp)
     int h = mSize.Y();
 
     if (mIsVertical) {
-        int ph = (int)roundf(progress * h);
+        int ph = (int)round(progress * h);
         if (mInverseDirection) {
             y = y + h - ph;
-        } else {
-            h = ph;
         }
+        h = ph;
     } else {
-        int pw = (int)roundf(progress * w);
+        int pw = (int)round(progress * w);
         if (mInverseDirection) {
             x = x + w - pw;
-        } else {
-            w = pw;
         }
+        w = pw;
     }
 
     if (mShadowEnabled) {
-        bmp.Rectangle(x + mShadowOffset.X(), y +  mShadowOffset.Y(), w, h, mColor);
+        bmp.Rectangle(x + mShadowOffset.X(), y +  mShadowOffset.Y(), w, h, mShadowColor);
     }
     bmp.Rectangle(x, y, w, h, mColor);
 }
