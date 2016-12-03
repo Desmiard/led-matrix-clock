@@ -73,6 +73,9 @@
     <ClCompile Include="widgetfactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="progressbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -142,6 +145,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="widgetfactory.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="progressbar.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 #define __WIDGET_H
 
 #include "bitmap.h"
-#include "json/json.h"
+#include "json/json-forwards.h"
 
 //
 // Widget

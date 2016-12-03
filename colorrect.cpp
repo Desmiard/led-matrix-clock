@@ -1,5 +1,6 @@
 #include "colorrect.h"
 #include "widgetfactory.h"
+#include "json/json.h"
 
 //
 // ColorRect

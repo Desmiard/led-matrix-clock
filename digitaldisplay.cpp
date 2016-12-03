@@ -2,6 +2,7 @@
 #include "ClockDigitsHelper.h"
 #include "widgetfactory.h"
 #include "datasourcefactory.h"
+#include "json/json.h"
 
 //
 // DigitalDisplay

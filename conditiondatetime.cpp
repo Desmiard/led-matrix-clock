@@ -69,9 +69,9 @@ bool ConditionTime::Test() const
 #endif
 
     if (CompareTime(mStop, mStart) > 0) {
-        return (CompareTime(ti, mStart) >= 0 && CompareTime(ti, mStop) <= 0);
+        return (CompareTime(ti, mStart) >= 0) && (CompareTime(ti, mStop) <= 0);
     } else {
-        return (CompareTime(ti, mStart) >= 0 != CompareTime(ti, mStop) <= 0);
+        return (CompareTime(ti, mStart) >= 0) != (CompareTime(ti, mStop) <= 0);
     }    
     return false;
 }

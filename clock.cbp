@@ -72,6 +72,8 @@
 		<Unit filename="page.h" />
 		<Unit filename="preset.cpp" />
 		<Unit filename="preset.h" />
+		<Unit filename="progressbar.cpp" />        
+		<Unit filename="progressbar.h" />
 		<Unit filename="timedatasource.cpp" />
 		<Unit filename="timedatasource.h" />
 		<Unit filename="timer.cpp" />

@@ -26,6 +26,7 @@
     <ClCompile Include="json\jsoncpp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="page.cpp" />
+    <ClCompile Include="progressbar.cpp" />
     <ClCompile Include="timedatasource.cpp" />
     <ClCompile Include="vector2.cpp" />
     <ClCompile Include="preset.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="json\json.h" />
     <ClInclude Include="datasource.h" />
     <ClInclude Include="page.h" />
+    <ClInclude Include="progressbar.h" />
     <ClInclude Include="timedatasource.h" />
     <ClInclude Include="vector2.h" />
     <ClInclude Include="preset.h" />
