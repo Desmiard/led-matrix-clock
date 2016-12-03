@@ -46,7 +46,31 @@
                                 "space":1,
                                 "divider":3
                             }
-                        }                        
+                        },
+                        {
+                            "type":"progress_bar",
+                            "position":{
+                                "x":0,
+                                "y":2
+                            },
+                            "size":{
+                                "x":60,
+                                "y":1
+                            },
+                            "color":{
+                                "r":0,
+                                "g":6,
+                                "b":6
+                            },
+                            "value":{
+                                "min":0,
+                                "max":59
+                            },
+                            "source":{
+                                "type":"time",
+                                "mode":"sec"
+                            }
+                        }
                     ]
                 }                
             ]

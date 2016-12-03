@@ -13,17 +13,16 @@ class ProgressBar
 : public Widget
 {
 private:
+    int mMinValue;
+    int mMaxValue;
 
-    bool mInverseDirection;
     bool mIsVertical;
+    bool mInverseDirection;
 
     Vector2 mPosition;
     Vector2 mSize;
 
     Color mColor;
-
-    int mMinValue;
-    int mMaxValue;
 
     bool mShadowEnabled;
     Vector2 mShadowOffset;

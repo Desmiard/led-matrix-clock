@@ -13,6 +13,8 @@ ProgressBar::ProgressBar()
 : mMinValue(0)
 , mMaxValue(0)
 , mIsVertical(false)
+, mInverseDirection(false)
+, mShadowEnabled(false)
 {
 }
 
@@ -26,7 +28,7 @@ void ProgressBar::Init(const Json::Value & config)
     auto value = config["value"];
     if (value.isObject()) {
         mMinValue = value["min"].asInt();
-        mMinValue = value["max"].asInt();
+        mMaxValue = value["max"].asInt();
     }
 
     if (config["inverse"].isBool()) {
@@ -48,7 +50,6 @@ void ProgressBar::Init(const Json::Value & config)
 
 void ProgressBar::Draw(Bitmap & bmp)
 {
-
     int value = mMinValue;
     std::shared_ptr<NumericDataSource> nds = std::dynamic_pointer_cast<NumericDataSource>(mDataSource);
     if (nds) {
