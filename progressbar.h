@@ -13,11 +13,18 @@ class ProgressBar
 : public Widget
 {
 private:
+    enum Direction
+    {
+        Normal,
+        Inverse,
+        Center,
+    };
+
     int mMinValue;
     int mMaxValue;
 
     bool mIsVertical;
-    bool mInverseDirection;
+    Direction mDirection;
 
     Vector2 mPosition;
     Vector2 mSize;

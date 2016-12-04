@@ -10,11 +10,11 @@
 REGISTER_WIDGET(ProgressBar, progress_bar);
 
 ProgressBar::ProgressBar()
-: mMinValue(0)
-, mMaxValue(0)
-, mIsVertical(false)
-, mInverseDirection(false)
-, mShadowEnabled(false)
+    : mMinValue(0)
+    , mMaxValue(0)
+    , mIsVertical(false)
+    , mDirection(Normal)
+    , mShadowEnabled(false)
 {
 }
 
@@ -31,8 +31,15 @@ void ProgressBar::Init(const Json::Value & config)
         mMaxValue = value["max"].asInt();
     }
 
-    if (config["inverse"].isBool()) {
-        mInverseDirection = config["inverse"].asBool();
+    if (config["direction"].isString()) {
+        auto dir = config["direction"].asString();
+        if (dir == "normal") {
+            mDirection = Normal;
+        } else if (dir == "inverse") {
+            mDirection = Inverse;
+        } else if (dir == "center") {
+            mDirection = Center;
+        }
     }
 
     if (config["align"].isString()) {
@@ -65,20 +72,29 @@ void ProgressBar::Draw(Bitmap & bmp)
 
     if (mIsVertical) {
         int ph = (int)round(progress * h);
-        if (mInverseDirection) {
+        switch (mDirection) {
+        case Inverse:
             y = y + h - ph;
+            break;
+        case Center:
+            y = y + (h - ph) / 2;
+            break;
         }
         h = ph;
     } else {
         int pw = (int)round(progress * w);
-        if (mInverseDirection) {
+        switch (mDirection) {
+        case Inverse:
             x = x + w - pw;
+            break;
+        case Center:
+            y = y + (w - pw) / 2;
+            break;
         }
         w = pw;
     }
-
     if (mShadowEnabled) {
-        bmp.Rectangle(x + mShadowOffset.X(), y +  mShadowOffset.Y(), w, h, mShadowColor);
+        bmp.Rectangle(x + mShadowOffset.X(), y + mShadowOffset.Y(), w, h, mShadowColor);
     }
     bmp.Rectangle(x, y, w, h, mColor);
 }
