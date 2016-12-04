@@ -73,6 +73,8 @@ void ProgressBar::Draw(Bitmap & bmp)
     if (mIsVertical) {
         int ph = (int)round(progress * h);
         switch (mDirection) {
+        case Normal:
+            break;
         case Inverse:
             y = y + h - ph;
             break;
@@ -84,11 +86,13 @@ void ProgressBar::Draw(Bitmap & bmp)
     } else {
         int pw = (int)round(progress * w);
         switch (mDirection) {
+        case Normal:
+            break;
         case Inverse:
             x = x + w - pw;
             break;
         case Center:
-            y = y + (w - pw) / 2;
+            x = x + (w - pw) / 2;
             break;
         }
         w = pw;
